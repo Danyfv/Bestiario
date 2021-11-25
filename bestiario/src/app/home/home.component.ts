@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { catchError, Observable } from 'rxjs';
+import { DataService, Mucca } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
+  constructor(private dataService: DataService) { }
 
-  constructor() { }
-
+  mucche: Mucca[] = [];
+  errorMessage: string | undefined;
+  
   ngOnInit(): void {
-  }
 
+    console.log( this.dataService.getMucche().subscribe((data: {}) => {
+      return data;
+    })
+    );
+      
+  }
 }

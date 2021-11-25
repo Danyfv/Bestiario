@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from './material.module';
+import { DataService } from './data.service';
 
 
 @NgModule({
